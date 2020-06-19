@@ -44,7 +44,7 @@
 
 			var container, stats;
 
-			var camera, scene, renderer;
+// 		took out camera scene and renderer
 
 			var geometry, objects;
 
@@ -52,8 +52,7 @@
 
 			var sign = 1;
 
-			init();
-			animate();
+// 		call on functions init and animate
 
 			function init() {
 
@@ -76,25 +75,16 @@
 
 				light = new THREE.AmbientLight( 0x111111 );
 				scene.add( light );
+// loader of THREE.GLTFLoader()
+// 				variable load the model .gltf
+// 				second arg is function call with arg gltf 
+// 				do gltf.scene.traverse( function ( node ) {
+// 				check if node.isMesh is true, then assign mesh to node
+//  				mesh.material.morphTargets = true;
 
-				var loader = new THREE.GLTFLoader();
-				loader.load( 'model.gltf', function ( gltf ) {
+// 					mesh.rotation.z = Math.PI / 2;
 
-					gltf.scene.traverse( function ( node ) {
-
-						if ( node.isMesh ) mesh = node;
-
-					} );
-
-					mesh.material.morphTargets = true;
-
-					mesh.rotation.z = Math.PI / 2;
-
-					scene.add( mesh );
-
-				});
-
-				//
+// 					scene.add( mesh ); })
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );

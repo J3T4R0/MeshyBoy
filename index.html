@@ -65,26 +65,8 @@
 				scene.background = new THREE.Color( 0x222222 );
 				scene.fog = new THREE.Fog( 0x000000, 1, 15000 );
 
-				var light = new THREE.PointLight( 0xff2200, 0.7 );
-				light.position.set( 100, 100, 100 );
-				scene.add( light );
+				//light
 
-				light = new THREE.PointLight( 0x22ff00, 0.7 );
-				light.position.set( -100, -100, -100 );
-				scene.add( light );
-
-				light = new THREE.AmbientLight( 0x111111 );
-				scene.add( light );
-// loader of THREE.GLTFLoader()
-// 				variable load the model .gltf
-// 				second arg is function call with arg gltf 
-// 				do gltf.scene.traverse( function ( node ) {
-// 				check if node.isMesh is true, then assign mesh to node
-//  				mesh.material.morphTargets = true;
-
-// 					mesh.rotation.z = Math.PI / 2;
-
-// 					scene.add( mesh ); })
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
